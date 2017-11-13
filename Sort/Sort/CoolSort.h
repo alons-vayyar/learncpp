@@ -6,7 +6,7 @@
 class CoolSort
 {
 public:
-	bool writeIntToFile(const std::string& path, std::vector<std::string> myVec);
+	bool WriteIntToFile(const std::string& path, std::vector<std::string> myVec);
 
 private:
 
