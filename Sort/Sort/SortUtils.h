@@ -1,9 +1,12 @@
 #pragma once
 #include <string>
 #include <vector>
-#include <iostream>
 
+class SortUtils
+{
+public:
+	static bool SortByInt(std::string i, std::string j);
+	static void PrintVectorScreen(std::vector<std::string> v1);
+};
 
-bool ByInt(std::string i, std::string j);
-void printVectorScreen(std::vector<std::string> v1);
 

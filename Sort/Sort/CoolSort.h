@@ -1,14 +1,15 @@
 #pragma once
-#include <string>
+
 #include <vector>
 
 
 class CoolSort
 {
 public:
-	bool WriteIntToFile(const std::string& path, std::vector<std::string> myVec);
-
+	void SetVector(std::vector<std::string> v1);
+	void SortInt();
+	void SortStrings();
 private:
-
+	std::vector<std::string> MyVec;
 
 };

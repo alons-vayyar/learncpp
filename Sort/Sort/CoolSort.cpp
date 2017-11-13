@@ -1,20 +1,23 @@
 #include "CoolSort.h"
+#include "SortUtils.h"
+#include <algorithm>
 
 
-
-
-
-bool CoolSort::WriteIntToFile(const std::string& path, std::vector<std::string> myVec)
+void CoolSort::SortStrings()
 {
-	std::ofstream myfile;
-	//path.insert(path.begin() + 2, "\");
-	myfile.open(path);
-	if (myfile.is_open())
-	{
-		sortIntNew(myVec);
-		sortStringsNew(myVec);
+	this->MyVec.erase(this->MyVec.begin()); //erase the name of the program,first element
+	std::sort(this->MyVec.begin(), this->MyVec.end());
+	SortUtils::PrintVectorScreen(this->MyVec);
+}
 
-	}
+void CoolSort::SortInt()
+{
+	this->MyVec.erase(this->MyVec.begin()); //erase the name of the program,first element
+	std::sort(this->MyVec.begin(), this->MyVec.end(), SortUtils::SortByInt);
+	SortUtils::PrintVectorScreen(this->MyVec);
+}
 
-	return true;
+void CoolSort::SetVector(std::vector<std::string> v1)
+{
+	this->MyVec = v1;
 }

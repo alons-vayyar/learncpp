@@ -1,19 +1,18 @@
 #include <string>
 #include <vector>
 #include <iostream>
+#include "SortUtils.h"
 
-
-//sort by int
-bool ByInt(std::string i, std::string j)
-{
-	return std::stoi(i) < std::stoi(j);
-} 
-void printVectorScreen(std::vector<std::string> v1)
-{
-	int k;
-	for (k = 0; k < v1.size() - 1; k++)
+bool SortUtils::SortByInt(std::string i, std::string j)
 	{
-		std::cout << v1[k] << ", ";
+		return std::stoi(i) < std::stoi(j);
 	}
-	std::cout << v1[v1.size() - 1] << std::endl;
-}
+void SortUtils::PrintVectorScreen(std::vector<std::string> v1)
+	{
+		int k;
+		for (k = 0; k < v1.size() - 1; k++)
+		{
+			std::cout << v1[k] << ", ";
+		}
+		std::cout << v1[v1.size() - 1] << std::endl;
+	}
