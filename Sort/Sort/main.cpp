@@ -22,30 +22,8 @@ void printVector(std::vector <std::string> v1)
 	}
 	std::cout << v1[v1.size() - 1] << std::endl;
 }
-void sortIntsOld(int size,char* array_to_sort[])
-{
-	int i = 0, j,k;
-	char* newNum;
-	char* temp;
-	for(j=2 ; j < size; j++)
-	{
-		newNum = array_to_sort[j];
-		i = j - 1;
-		while( (i>0) && (std::stoi(newNum) < std::stoi(array_to_sort[i])) )
-		{
-			temp = array_to_sort[i + 1];
-			array_to_sort[i + 1] = array_to_sort[i];
-			array_to_sort[i] = temp;
-			i--;
-		}
-		array_to_sort[i + 1] = newNum;
-	}
-	for(k=1 ; k < size-1 ; k++)
-	{
-		std::cout << array_to_sort[k] << ", ";
-	}
-	std::cout << array_to_sort[size - 1] << std::endl;
-}
+
+
 void sortStringsNew(std::vector <std::string> v1)
 {
 	v1.erase(v1.begin()); //erase the name of the program,first element
@@ -55,32 +33,8 @@ void sortStringsNew(std::vector <std::string> v1)
 void sortIntNew(std::vector <std::string> v1)
 {
 	v1.erase(v1.begin()); //erase the name of the program,first element
-	std::sort(v1.begin(), v1.end(), byInt);
-	printVector(v1);
-}
-void sortStringsOld(int size, char* array_to_sort[])
-{
-	int i = 0, j, k;
-	char* newNum;
-	char* temp;
-	for (j = 2; j < size; j++)
-	{
-		newNum = array_to_sort[j];
-		i = j - 1;
-		while ((i>0) && (strcoll(newNum,array_to_sort[i]))<0)
-		{
-			temp = array_to_sort[i + 1];
-			array_to_sort[i + 1] = array_to_sort[i];
-			array_to_sort[i] = temp;
-			i--;
-		}
-		array_to_sort[i + 1] = newNum;
-	}
-	for (k = 1; k < size - 1; k++)
-	{
-		std::cout << array_to_sort[k] << ", ";
-	}
-	std::cout << array_to_sort[size - 1] << std::endl;
+	std::sort(v1.begin(), v1.end(), ByInt);
+	printVectorScreen(v1);
 }
 
 /*
