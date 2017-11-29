@@ -2,17 +2,29 @@
 #include <vector>
 #include <iostream>
 #include "SortUtils.h"
+#include <map>
+#include <algorithm>
 
-bool SortUtils::SortByInt(std::string i, std::string j)
+
+template <class T>
+bool SortUtils<T>::SortByAny(T i, T j)
+{
+	return std::stoi(i) < std::stoi(j);
+}
+
+template <class T>
+void SortUtils<T>::PrintVector(const std::vector<T>& v1, std::ostream& out)
+{
+	for (size_t k = 0; k < v1.size() - 1; k++)
 	{
-		return std::stoi(i) < std::stoi(j);
+		out << v1[k] << ", ";
 	}
-void SortUtils::PrintVectorScreen(std::vector<std::string> v1)
-	{
-		int k;
-		for (k = 0; k < v1.size() - 1; k++)
-		{
-			std::cout << v1[k] << ", ";
-		}
-		std::cout << v1[v1.size() - 1] << std::endl;
-	}
+	out << v1[v1.size() - 1] << std::endl;
+}
+
+template <class T>
+void SortAny(std::vector<T> MyVec)
+{
+	std::sort(MyVec.begin(), MyVec.end());
+	SortUtils<T>::PrintVector(MyVec);
+}

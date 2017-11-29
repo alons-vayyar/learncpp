@@ -1,14 +1,10 @@
-#include <iostream>
-#include <cstdlib>
+
 #include <string>
-#include <sstream>
-#include <string.h>
 #include <vector>
-#include <list>
-#include <algorithm>
-#include <fstream>
 #include "SortUtils.h"
 #include "CoolSort.h"
+#include <memory>
+#include <iostream>
 
 
 /*
@@ -23,19 +19,23 @@
  */
 
 	
+// ostream
+// ctor, dtor
+// template sort function for every class that has the appropriate method (***)
+// Create class student - give some parameters
+// (***) Write an appropriate sorting method for student by age
+
+
 int main(int argc, char* argv[])
 {
-	std::vector<std::string> myVec(argv, argv + argc);
-	CoolSort MySort;
-	MySort.SetVector(myVec);
-	MySort.SortInt();
-
-
-
-
-	//std::vector<int> a(10);
-	//std::string k;
-	//std::vector<int>::iterator it;
-
+	std::vector<std::string> myVec(argv+1, argv + argc);
+	
+	std::ofstream *MyFile;
+	//CoolSort MySort;
+	//myVec.erase(myVec.begin()); //erase the name of the program,first element
+	//MySort.SetVector(myVec);
+	//MySort.SortInt(std::cout);
+	//MySort.SortStrings(std::cout);
+	SortUtils<std::string>::SortAny(myVec);
 	return 0;
 }

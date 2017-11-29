@@ -3,21 +3,29 @@
 #include <algorithm>
 
 
-void CoolSort::SortStrings()
+CoolSort::CoolSort(size_t size, int ivalue)
 {
-	this->MyVec.erase(this->MyVec.begin()); //erase the name of the program,first element
-	std::sort(this->MyVec.begin(), this->MyVec.end());
-	SortUtils::PrintVectorScreen(this->MyVec);
+		
 }
 
-void CoolSort::SortInt()
+CoolSort::~CoolSort()
 {
-	this->MyVec.erase(this->MyVec.begin()); //erase the name of the program,first element
-	std::sort(this->MyVec.begin(), this->MyVec.end(), SortUtils::SortByInt);
-	SortUtils::PrintVectorScreen(this->MyVec);
+	
 }
 
-void CoolSort::SetVector(std::vector<std::string> v1)
+void CoolSort::SortStrings(std::ostream& out)
 {
-	this->MyVec = v1;
+	std::sort(MyVec.begin(), MyVec.end());
+	SortUtils::PrintVector(MyVec,out);
+}
+
+void CoolSort::SortInt(std::ostream& out)
+{
+	std::sort(MyVec.begin(), MyVec.end(), SortUtils::SortByInt);
+	SortUtils::PrintVector(MyVec,out);
+}
+
+void CoolSort::SetVector(const std::vector<std::string>& v1)
+{
+	MyVec = v1;
 }

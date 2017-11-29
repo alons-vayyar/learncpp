@@ -19,7 +19,13 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="CoolSort.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="SortUtils.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="CoolSort.h" />
+    <ClInclude Include="SortUtils.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{64A9D9E0-9B6D-4B77-96F9-0E8C1977EF61}</ProjectGuid>
